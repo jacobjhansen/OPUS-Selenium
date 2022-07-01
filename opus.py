@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from pyvirtualdisplay import Display
+import pathlib
 
 print('Starting OPUS-Selenium...\n')
 
@@ -40,7 +41,7 @@ assert "OPUS" in driver.title
 
 # Upload File
 upload = driver.find_element(by=By.NAME, value="uploadfile")
-upload.send_keys(file)
+upload.send_keys(str(pathlib.Path(file).resolve()))
 print('File Uploaded Successfully')
 
 # Open Antenna Dropdown to dynamically load content
