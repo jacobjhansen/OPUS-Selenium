@@ -78,4 +78,5 @@ print('Submitted')
 
 #Alert(driver).accept()
 
+driver.quit()
 sys.exit()
